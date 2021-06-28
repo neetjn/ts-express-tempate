@@ -12,7 +12,9 @@ const port = process.env.PORT || 3000;
 app.use(ApiRootRoutes.Base, ApiRootController);
 app.use(TodoRoutes.Base, TodoController);
 
-app.listen(port, () => {
+export const server = app.listen(port, () => {
   return console.log(`server is listening on ${port}`);
 });
+
+export default app;
 
