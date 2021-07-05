@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { IApiRootDto } from '../models/apiroot';
+import { IApiRootDto } from '../mediatypes/apiroot';
 import {
   Routes as TodoRoutes,
   RelMap as TodoRelMap,

@@ -1,11 +1,7 @@
 import Data from './bin/todolist.json';
-import { ILinkDto } from '../models/apiroot';
-import {
-  ITodo,
-  ITodoCollection,
-  ITodoDto,
-  ITodoCollectionDto,
-} from '../models/todo';
+import { ITodo, ITodoCollection } from '../models/todo';
+import { ILinkDto } from '../mediatypes/apiroot';
+import { ITodoDto, ITodoCollectionDto } from '../mediatypes/todo';
 
 export const getTodoCollection = (pageStart: number = 0, pageEnd: number = 1000): ITodoCollection => ({
   items: Data.slice(pageStart, pageEnd),

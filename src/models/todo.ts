@@ -1,5 +1,3 @@
-import { IApiRootDto } from './apiroot';
-
 export interface ITodo {
   id: number;
   title: string;
@@ -11,9 +9,4 @@ export interface ITodo {
 export interface ITodoCollection {
   items: Array<ITodo>;
 }
-
-export type ITodoDto = ITodo & IApiRootDto;
-export type ITodoCollectionDto = {
-  items: Array<ITodoDto>,
-} & IApiRootDto;
 

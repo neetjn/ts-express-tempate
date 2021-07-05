@@ -5,11 +5,10 @@ import {
   todoToDto,
   todoCollectionToDto,
 } from '../core/todo';
-import {
-  ITodo,
-  ITodoDto,
-} from '../models/todo';
+import { ITodo } from '../models/todo';
+import { ITodoDto } from '../mediatypes/todo';
 import { getHref } from '../utils';
+import { NotFoundError } from '../utils/errors';
 import { Methods } from '../enums';
 
 const router: Router = Router();
@@ -56,9 +55,8 @@ router.get(Routes.Todo, (req: Request, res: Response) => {
     res.json(toDto(todo, req));
     return;
   }
-  res.status(404).json({
-    error: 'Not Found',
-  });
+  // note: if using mongoose or orm can bake this logic into generic getter for model
+  throw NotFoundError(res, `Resource "Todo" of id "${id}" not found.`);
 });
 
 export default router;
